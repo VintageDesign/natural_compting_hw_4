@@ -15,6 +15,7 @@ def drawTree(level, size, T):
     T.right(2*angle)
     drawTree(level - 1, size/1.5, T)
     T.left(angle)
+    drawTree(level - 1, size/1.5, T)
     T.backward(size)
 
 
@@ -27,7 +28,7 @@ def main():
     T.left(90)
     T.sety(-400)
     T.down()
-    drawTree(12, 300, T)
+    drawTree(5, 300, T)
     sleep(100)
 
 
