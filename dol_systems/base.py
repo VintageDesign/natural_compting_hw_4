@@ -85,7 +85,7 @@ class DOL(object):
         ts = turtle.getscreen()
 
         ts.getcanvas().postscript(file=self.name + ".eps")
-        turtle.resetscreen()
+        turtle.clearscreen()
 
     def rewrite(self, structure):
         raise NotImplementedError
