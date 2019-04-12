@@ -28,7 +28,7 @@ class DOL(object):
         self.T.speed(0)
         self.T.up()
         self.T.left(90)
-        self.T.sety(-400)
+        self.T.sety(-200)
         self.T.down()
 
 
@@ -85,7 +85,7 @@ class DOL(object):
         ts = turtle.getscreen()
 
         ts.getcanvas().postscript(file=self.name + ".eps")
-        turtle.reset()
+        turtle.resetscreen()
 
     def rewrite(self, structure):
         raise NotImplementedError

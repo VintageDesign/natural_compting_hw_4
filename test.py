@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import argparse
-from dol_systems import Example_A
+from dol_systems import Example_B
 
 def parse_args():
     parser = argparse.ArgumentParser(description="DOL creator")
@@ -38,7 +38,7 @@ def parse_args():
 
 def main(args):
     print(args)
-    dol = Example_A(
+    dol = Example_B(
             args.tier,
             args.dell,
             args.base,

@@ -12,7 +12,6 @@ from dol_systems import Example_F
 
 
 def main():
-    '''
     print('Running A')
     dol = Example_A(
             8,
@@ -22,7 +21,6 @@ def main():
             "Example_A"
     )
     dol.run()
-    '''
     print('Running B')
     dol = Example_B(
             4,
