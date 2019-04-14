@@ -23,10 +23,10 @@ def parse_args():
         default=20,
         type=int,
         help="Y size of the grid")
+    return parser.parse_args()
 
 def main(args):
     print(args)
-    '''
     heatFlow= HeatFlow(
         args.ticks,
         args.x_size,
@@ -34,7 +34,6 @@ def main(args):
     )
 
     heatFlow.run()
-    '''
 
     '''
     TODO
