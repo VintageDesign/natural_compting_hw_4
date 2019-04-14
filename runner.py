@@ -30,7 +30,6 @@ def main():
             "Example_B"
     )
     dol.run()
-    '''
     print('Running C')
     dol = Example_C(
             6,
@@ -67,7 +66,6 @@ def main():
             "Example_F"
     )
     dol.run()
-    '''
 
 if __name__ == "__main__":
     main()

@@ -28,7 +28,7 @@ class DOL(object):
         self.T.speed(0)
         self.T.up()
         self.T.left(90)
-        self.T.sety(-200)
+        self.T.sety(-400)
         self.T.down()
 
 

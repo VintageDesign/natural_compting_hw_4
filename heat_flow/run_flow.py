@@ -9,6 +9,7 @@ def parse_args():
         "--ticks",
         "-t",
         default=1,
+        type=int,
         help="Iterations to run")
     parser.add_argument(
         "--x_size",
@@ -25,6 +26,7 @@ def parse_args():
 
 def main(args):
     print(args)
+    '''
     heatFlow= HeatFlow(
         args.ticks,
         args.x_size,
@@ -32,7 +34,7 @@ def main(args):
     )
 
     heatFlow.run()
-
+    '''
 
     '''
     TODO
