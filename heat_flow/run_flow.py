@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import argparse
 from heat_flow import HeatFlow
+import pylab as plt
 
 def parse_args():
     parser = argparse.ArgumentParser(description="DOL creator")
@@ -33,14 +34,13 @@ def main(args):
         args.y_size
     )
 
-    heatFlow.run()
+    results = heatFlow.run()
 
-    '''
-    TODO
-    init heat flow with:
-    y = linspace(0,10, y_size)
-    grid[:, 0] = y(y-10)
-    '''
+    for i in range(0,9):
+        plt.subplot(3,3, i+1)
+        plt.imshow(results[i], cmap=plt.cm.gray , interpolation='nearest')
+
+    plt.show()
 
 
 if __name__ == "__main__":

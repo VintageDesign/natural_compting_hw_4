@@ -14,19 +14,17 @@ class HeatFlow:
 
         self.grid = np.zeros(self.grid_size)
         y = np.linspace(0,10, y_size)
-        self.grid[:, 0] = y * (y - 10)
+        self.grid[:, 0] = -y * (y - 10)
 
 
     def updateFlow(self):
         new_grid = np.zeros(self.grid_size)
-
-        # Update side walls
         for i in range(1, self.grid_size[0]-1-1):
-            new_grid[i,0] = self.grid[i-1, 0]
-            new_grid[i,self.grid_size[1]-1] = self.grid[i-1, self.grid_size[1]-1]
+            #new_grid[i][0] = self.grid[i-1][0]
+            #new_grid[i,self.grid_size[1]-1] = self.grid[i-1, self.grid_size[1]-1]
             for j in range(1, self.grid_size[1]-2):
-                new_grid = round( (self.grid[i-1, j] + self.grid[i+1, j] + self.grid[i, j-1] + self.grid[i, j+1])/4)
-
+                print(j)
+                new_grid[i,j] = round((self.grid[i-1, j] + self.grid[i+1, j] + self.grid[i, j-1] + self.grid[i, j+1])/4)
         self.grid = new_grid
 
 
@@ -42,7 +40,7 @@ class HeatFlow:
         return_list = []
         for iteration in range(0, self.ticks):
             self.updateFlow()
-            if iteration % 100 == 0:
+            if iteration % round(self.ticks/9) == 0:
                 return_list.append(self.grid)
         return return_list
 
