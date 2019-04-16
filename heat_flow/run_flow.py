@@ -39,7 +39,7 @@ def main(args):
     for i in range(0,9):
         print(i)
         plt.subplot(3,3, i+1)
-        plt.imshow(results[i], cmap=plt.cm.gray , interpolation='nearest')
+        plt.imshow(results[i], cmap='hot' , interpolation='nearest')
 
     plt.show()
 
