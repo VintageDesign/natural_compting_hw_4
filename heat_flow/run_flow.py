@@ -37,6 +37,7 @@ def main(args):
     results = heatFlow.run()
 
     for i in range(0,9):
+        print(i)
         plt.subplot(3,3, i+1)
         plt.imshow(results[i], cmap=plt.cm.gray , interpolation='nearest')
 
