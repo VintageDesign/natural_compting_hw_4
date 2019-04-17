@@ -12,31 +12,13 @@ from dol_systems import Example_F
 
 
 def main():
-    print('Running A')
-    dol = Example_A(
-            8, #8
-            22.5,
-            'G',
-            1,
-            "Example_A"
-    )
-    dol.run()
     print('Running B')
     dol = Example_B(
             4, #4
             22.5,
             'F',
-            1,
-            "Example_B"
-    )
-    dol.run()
-    print('Running C')
-    dol = Example_C(
             6,
-            22.5,
-            'G',
-            1,
-            "Example_C"
+            "Example_B"
     )
     dol.run()
     print('Running D')
@@ -44,7 +26,7 @@ def main():
             9,
             20,
             'G',
-            1,
+            .5,
             "Example_D"
     )
     dol.run()
@@ -53,7 +35,7 @@ def main():
             9,
             25.7,
             'G',
-            2,
+            .5,
             "Example_E"
     )
     dol.run()
@@ -62,7 +44,7 @@ def main():
             5,
             22.5,
             'G',
-            2,
+            7,
             "Example_F"
     )
     dol.run()

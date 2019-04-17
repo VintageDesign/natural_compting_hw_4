@@ -15,26 +15,26 @@ class HeatFlow:
 
         self.grid = np.zeros(self.grid_size)
         y = np.linspace(0,10, y_size)
-        self.grid[:, 0] = -y * (y - 10)
+        self.grid[:, 0] = y * (10 - y)
 
 
     def updateFlow(self):
         new_grid = np.zeros(self.grid_size)
         new_grid[:,:] = self.grid[:,:]
-        for col in range(1, self.grid_size[1] - 1):
-            new_grid[0,col] = self.grid[0,col-1]
-            new_grid[self.grid_size[0]-1,col] = self.grid[self.grid_size[0]-1,col-1]
+        new_grid[0,:] = self.grid[1,:]
+        new_grid[self.grid_size[0]-1, :] = self.grid[self.grid_size[0]-2, :]
         for j in range(1, self.grid_size[1]-1):
             for i in range(0, self.grid_size[0]-1):
-                new_grid[2i,j] = (self.grid[i-1, j] + self.grid[i+1, j] + self.grid[i, j-1] + self.grid[i, j+1])/4
-        self.grid[:,:] =  new_grid[:,:]
+                new_grid[i,j] = (self.grid[i-1, j] + self.grid[i+1, j] \
+                        + self.grid[i, j-1] + self.grid[i, j+1])/4
+        self.grid[:,:] = new_grid[:,:]
 
 
     def showGrid(self):
         '''
         Prints the grid
         '''
-        image = plt.imshow(self.grid, cmap='Greys')
+        image = plt.imshow(self.grid, cmap='hot')
         plt.show()
 
 
@@ -43,7 +43,6 @@ class HeatFlow:
         for iteration in range(0, self.ticks):
             self.updateFlow()
             if iteration % ceil(self.ticks/9) == 0:
-                print(iteration)
                 return_list.append(np.copy(self.grid))
         return return_list
 
