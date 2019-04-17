@@ -1,21 +1,22 @@
 import turtle
 from time import sleep
 
-angle = 45
+angle = 85
+
 
 
 def drawTree(level, size, T):
     """level = number of layers further to go"""
-    if level == 0 or size/1.5 == 0:
+    if level == 0 :
         return
 
     T.forward(size)
     T.left(angle)
-    drawTree(level - 1, size/1.5, T)
+    drawTree(level - 1, size/3, T)
     T.right(2*angle)
-    drawTree(level - 1, size/1.5, T)
+    drawTree(level - 1, size/3, T)
     T.left(angle)
-    drawTree(level - 1, size/1.5, T)
+    drawTree(level - 1, size/3, T)
     T.backward(size)
 
 
