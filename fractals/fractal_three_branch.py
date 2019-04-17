@@ -2,7 +2,8 @@ import turtle
 import random
 from time import sleep
 
-angle = 45
+angle = 85
+
 
 
 def drawTree(level, size, T, color):
