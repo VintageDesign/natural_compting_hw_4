@@ -1,0 +1,6 @@
+Values used:
+Pattern     f       k
+theta       0.04    0.06
+lambda      0.038   0.066
+mu          0.053   0.066
+alpha       0.015   0.05
